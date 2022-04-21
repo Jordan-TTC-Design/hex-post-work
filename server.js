@@ -3,7 +3,7 @@ var url = require('url');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const Post = require('./models/posts');
-const header = require('./header');
+const headers = require('./headers');
 const { allError } = require('./handlers/errorHandlers');
 const { allSuccess, returnDataSuccess } = require('./handlers/successHandlers');
 
@@ -57,7 +57,7 @@ const requestListener = async (req, res) => {
       const number = await Post.find().count();
       const totalPages = Math.ceil(number / limit);
       const data = await Post.find().skip(startNum).limit(limit);
-      res.writeHead(200, header);
+      res.writeHead(200, headers);
       res.write(
         JSON.stringify({
           status: 'success',

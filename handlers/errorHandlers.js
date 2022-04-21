@@ -1,7 +1,7 @@
-const header = require('../header');
+const headers = require('../headers');
 
 function allError(statusNumber,res,message) {
-  res.writeHead(statusNumber, header);
+  res.writeHead(statusNumber, headers);
   res.write(
     JSON.stringify({
       status: 'false',

@@ -1,7 +1,7 @@
-const header = require('../header');
+const headers = require('../headers');
 
 function allSuccess(statusNumber, res, message) {
-  res.writeHead(statusNumber, header);
+  res.writeHead(statusNumber, headers);
   res.write(
     JSON.stringify({
       status: 'success',
@@ -11,7 +11,7 @@ function allSuccess(statusNumber, res, message) {
   res.end();
 }
 function returnDataSuccess(statusNumber, res, message,data) {
-  res.writeHead(statusNumber, header);
+  res.writeHead(statusNumber, headers);
   res.write(
     JSON.stringify({
       status: 'success',
