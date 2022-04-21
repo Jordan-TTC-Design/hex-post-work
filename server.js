@@ -11,7 +11,7 @@ dotenv.config({ path: './config.env' });
 
 const DB = process.env.DATABASE.replace(
   '<password>',
-  process.env.DATABASE_PASSWORD,
+  process.env.DATABASE_PASSWORD
 );
 
 mongoose
@@ -119,7 +119,8 @@ const requestListener = async (req, res) => {
         break;
     }
   } else if (req.method === 'OPTIONS') {
-    allSuccess(200, res, '');
+    res.writeHead(200, headers);
+    res.end();
   } else {
     allError(404, res, '無此網站路由');
   }
