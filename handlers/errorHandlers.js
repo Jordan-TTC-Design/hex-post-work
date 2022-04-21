@@ -1,4 +1,4 @@
-const headers = require('../headers');
+const headers = require('../header');
 
 function allError(statusNumber,res,message) {
   res.writeHead(statusNumber, headers);

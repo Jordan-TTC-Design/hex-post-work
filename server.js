@@ -3,7 +3,7 @@ var url = require('url');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const Post = require('./models/posts');
-const headers = require('./headers');
+const headers = require('./header');
 const { allError } = require('./handlers/errorHandlers');
 const { allSuccess, returnDataSuccess } = require('./handlers/successHandlers');
 
